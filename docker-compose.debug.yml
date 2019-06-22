@@ -1,0 +1,10 @@
+version: '2.1'
+
+services:
+  flutter_dome:
+    image: flutter_dome
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+        - 3000:3000
