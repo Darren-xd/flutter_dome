@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_dome/home/grid_view_demo.dart';
 import 'package:flutter_dome/home/tab_view_demo.dart';
+import 'package:flutter_dome/prefile/prefile_page.dart';
+import 'package:flutter_dome/prefile/slivers_grid_demo.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -29,7 +31,9 @@ class _HomePageState extends State<HomePage> {
     _controllerList = [
       TabViewDemo(),
       GridViewDemo(),
-      getContextItem("TAB2"),
+      // getContextItem("TAB2"),
+      // SliversGridDemo(),
+      new PrefilePage(),
     ];
   }
 
@@ -40,8 +44,8 @@ class _HomePageState extends State<HomePage> {
       length: _tabList.length,
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Home"),
-          bottom: TabBar(
+          // title: Text("Home"),
+          title: TabBar(
             tabs: _tabList,
             isScrollable: true,
             indicatorWeight: .5,
@@ -55,6 +59,12 @@ class _HomePageState extends State<HomePage> {
           //   icon: Icon(Icons.menu),
           //   onPressed: () {},
           // ),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.mail),
+              onPressed: () {},
+            )
+          ],
         ),
         body: TabBarView(
           children: _controllerList,
