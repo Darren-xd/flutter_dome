@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_dome/home/grid_view_demo.dart';
+import 'package:flutter_dome/home/list_view_demo.dart';
 import 'package:flutter_dome/home/tab_view_demo.dart';
 import 'package:flutter_dome/prefile/prefile_page.dart';
 import 'package:flutter_dome/prefile/slivers_grid_demo.dart';
@@ -24,16 +25,18 @@ class _HomePageState extends State<HomePage> {
 
   void initData() {
     _tabList = [
+      getItemTab('ListView'),
       getItemTab('PageView'),
       getItemTab('GridView'),
       getItemTab('Tab'),
     ];
     _controllerList = [
+      ListViewDemo(),
       TabViewDemo(),
       GridViewDemo(),
-      // getContextItem("TAB2"),
+      getContextItem("TAB2"),
       // SliversGridDemo(),
-      new PrefilePage(),
+      // new PrefilePage(),
     ];
   }
 

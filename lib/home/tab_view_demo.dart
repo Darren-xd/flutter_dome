@@ -40,6 +40,7 @@ class _TabViewDemoState extends State<TabViewDemo> {
   Widget build(BuildContext context) {
     return Container(
         child: PageView(
+      scrollDirection: Axis.vertical,
       controller: PageController(initialPage: 0, viewportFraction: 1.0),
       children: <Widget>[
         _pageImageItem(),

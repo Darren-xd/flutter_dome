@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dome/demo/navigator_demo.dart';
 import 'package:flutter_dome/home/home_page.dart';
 import 'package:flutter_dome/prefile/prefile_page.dart';
 import 'package:flutter_dome/settings/settings_page.dart';
@@ -15,7 +16,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.pink,
       ),
-      home: RootView(),
+      // home: RootView(),
+      // home: NavigatorDemo(),
+
+      initialRoute: '/',
+      routes: {
+        '/': (context) => RootView(),
+        '/about': (context) => Page(
+              title: "ABOUT",
+            ),
+      },
     );
 
     // return CupertinoApp(
