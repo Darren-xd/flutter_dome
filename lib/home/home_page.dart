@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_dome/home/grid_view_demo.dart';
+import 'package:flutter_dome/home/tab_view_demo.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -10,38 +12,24 @@ class _HomePageState extends State<HomePage> {
   List<Widget> _tabList;
   List<Widget> _controllerList;
 
+  Tab getItemTab(title) {
+    return Tab(child: Text(title, style: TextStyle(fontSize: 20)));
+  }
+
+  Container getContextItem(title) {
+    return Container(child: Center(child: Text(title)));
+  }
+
   void initData() {
     _tabList = [
-      Tab(
-        // icon: Icon(Icons.pages),
-        child: Text(
-          "Darren",
-          style: TextStyle(fontSize: 30),
-        ),
-      ),
-      Tab(
-        icon: Icon(Icons.grid_on),
-      ),
-      Tab(
-        icon: Icon(Icons.face),
-      ),
-      Tab(
-        icon: Icon(Icons.face),
-      ),
-      Tab(
-        icon: Icon(Icons.face),
-      ),
-      Tab(
-        icon: Icon(Icons.face),
-      ),
+      getItemTab('PageView'),
+      getItemTab('GridView'),
+      getItemTab('Tab'),
     ];
     _controllerList = [
-      ViewDemo(),
+      TabViewDemo(),
       GridViewDemo(),
-      TabViewDemo("TAB2"),
-      TabViewDemo("TAB2"),
-      TabViewDemo("TAB2"),
-      TabViewDemo("TAB2"),
+      getContextItem("TAB2"),
     ];
   }
 
@@ -51,110 +39,39 @@ class _HomePageState extends State<HomePage> {
     return DefaultTabController(
       length: _tabList.length,
       child: Scaffold(
-          appBar: AppBar(
-            title: Text("Home"),
-            bottom: TabBar(
-              tabs: _tabList,
-              isScrollable: true,
-              indicatorWeight: .5,
-              indicatorSize: TabBarIndicatorSize.label,
-              indicatorPadding: EdgeInsets.only(bottom: 10.0),
-            ),
-            leading: IconButton(
-              icon: Icon(Icons.menu),
-              onPressed: () {},
-            ),
+        appBar: AppBar(
+          title: Text("Home"),
+          bottom: TabBar(
+            tabs: _tabList,
+            isScrollable: true,
+            indicatorWeight: .5,
+            indicatorSize: TabBarIndicatorSize.label,
+            indicatorPadding: EdgeInsets.only(bottom: 10.0),
+            indicatorColor: Colors.white,
+            labelColor: Colors.white,
+            unselectedLabelColor: Colors.grey[800],
           ),
-          body: TabBarView(
-            children: _controllerList,
-          )),
-    );
-  }
-}
-
-class ViewDemo extends StatelessWidget {
-  String url =
-      'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1561205299484&di=28793bf2f1bb2bc50248d2b8efc6e1e9&imgtype=0&src=http%3A%2F%2Fs1.sinaimg.cn%2Fmw690%2F006fmRRJzy745Jb6KxG00%26690';
-  Widget _pageImageItem() {
-    return Stack(
-      children: <Widget>[
-        Container(
-          color: Colors.green,
-          child: Image.network(
-            url,
-            fit: BoxFit.cover,
+          // leading: IconButton(
+          //   icon: Icon(Icons.menu),
+          //   onPressed: () {},
+          // ),
+        ),
+        body: TabBarView(
+          children: _controllerList,
+        ),
+        drawer: Drawer(
+          child: ListView.builder(
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return SizedBox(
+                height: 60,
+                width: 200,
+                child: Text("Item$index"),
+              );
+            },
           ),
         ),
-        Positioned(
-          bottom: 30,
-          left: 30,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: <Widget>[
-              Text(
-                "Darren",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              Text("--作者"),
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        child: PageView(
-      controller: PageController(initialPage: 0, viewportFraction: 1.0),
-      children: <Widget>[
-        _pageImageItem(),
-        _pageImageItem(),
-      ],
-    ));
-  }
-}
-
-class TabViewDemo extends StatelessWidget {
-  const TabViewDemo(this.title, {Key key}) : super(key: key);
-  final String title;
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        title,
-        style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
       ),
-    );
-  }
-}
-
-class GridViewDemo extends StatelessWidget {
-  List<Widget> _itemList = new List();
-  void initData() {
-    for (int index = 0; index < 200; index++) {
-      Widget e = new Container(
-        color: Colors.grey[300],
-        child: Center(
-          child: Text(
-            "Item",
-            style: TextStyle(fontSize: 30.0),
-          ),
-        ),
-      );
-      _itemList.add(e);
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    initData();
-    return GridView.count(
-      crossAxisSpacing: 10,
-      mainAxisSpacing: 10,
-      crossAxisCount: 3,
-      children: _itemList,
     );
   }
 }

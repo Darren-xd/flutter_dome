@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dome/home/home_page.dart';
 import 'package:flutter_dome/prefile/prefile_page.dart';
@@ -16,6 +17,33 @@ class MyApp extends StatelessWidget {
       ),
       home: RootView(),
     );
+
+    // return CupertinoApp(
+    //   title: 'IOS',
+    //   theme: CupertinoThemeData(primaryColor: Colors.pink),
+    //   home: CupertinoTabScaffold(
+    //     tabBar: CupertinoTabBar(
+    //       items: [
+    //         BottomNavigationBarItem(
+    //             icon: Icon(Icons.home), title: Text("Home")),
+    //         BottomNavigationBarItem(
+    //             icon: Icon(Icons.settings), title: Text("Settings")),
+    //       ],
+    //     ),
+    //     tabBuilder: (context, index) {
+    //       return Center(
+    //           child: Row(
+    //         children: <Widget>[
+    //           Text("Index $index"),
+    //           CupertinoButton(
+    //             child: Text("Button"),
+    //             onPressed: () {},
+    //           )
+    //         ],
+    //       ));
+    //     },
+    //   ),
+    // );
   }
 }
 
