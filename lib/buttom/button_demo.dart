@@ -3,6 +3,8 @@ import 'package:flutter_dome/buttom/checkbox_demo.dart';
 import 'package:flutter_dome/buttom/date_time_demo.dart';
 import 'package:flutter_dome/buttom/popup_menu_button_demo.dart';
 import 'package:flutter_dome/buttom/switch_demo.dart';
+import 'package:flutter_dome/dialog/expansion_panel_demo.dart';
+import 'package:flutter_dome/dialog/simple_dialog_demo.dart';
 
 class ButtonDemo extends StatefulWidget {
   @override
@@ -41,6 +43,14 @@ class _ButtonDemoState extends State<ButtonDemo> {
           ListItem(
             title: "DateTimeDemo",
             page: DateTimeDemo(),
+          ),
+          ListItem(
+            title: "SimpleDialogDemo",
+            page: SimpleDialogDemo(),
+          ),
+          ListItem(
+            title: "ExpansionPanelDemo",
+            page: ExpansionPanelDemo(),
           ),
         ],
       ),
