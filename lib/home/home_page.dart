@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
           // ),
           actions: <Widget>[
             IconButton(
-              icon: Icon(Icons.mail),
+              icon: Icon(Icons.input),
               onPressed: () {
                 Navigator.of(context).pushNamed("/button");
               },

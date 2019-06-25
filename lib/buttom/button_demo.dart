@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dome/buttom/checkbox_demo.dart';
+import 'package:flutter_dome/buttom/date_time_demo.dart';
 import 'package:flutter_dome/buttom/popup_menu_button_demo.dart';
+import 'package:flutter_dome/buttom/switch_demo.dart';
 
 class ButtonDemo extends StatefulWidget {
   @override
@@ -26,6 +29,18 @@ class _ButtonDemoState extends State<ButtonDemo> {
           ListItem(
             title: "PopupMenuButton",
             page: PopupMenuButtonDemo(),
+          ),
+          ListItem(
+            title: "CheckboxDemo",
+            page: CheckboxDemo(),
+          ),
+          ListItem(
+            title: "SwitchDemo",
+            page: SwitchDemo(),
+          ),
+          ListItem(
+            title: "DateTimeDemo",
+            page: DateTimeDemo(),
           ),
         ],
       ),
