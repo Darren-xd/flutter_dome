@@ -4,6 +4,7 @@ import 'package:flutter_dome/demo/navigator_demo.dart';
 import 'package:flutter_dome/home/home_page.dart';
 import 'package:flutter_dome/prefile/prefile_page.dart';
 import 'package:flutter_dome/settings/settings_page.dart';
+import 'package:flutter_dome/login/login_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -19,12 +20,11 @@ class MyApp extends StatelessWidget {
       // home: RootView(),
       // home: NavigatorDemo(),
 
-      initialRoute: '/',
+      initialRoute: '/login',
       routes: {
         '/': (context) => RootView(),
-        '/about': (context) => Page(
-              title: "ABOUT",
-            ),
+        '/about': (context) => Page(title: "ABOUT"),
+        '/login': (context) => LoginPage(),
       },
     );
 
