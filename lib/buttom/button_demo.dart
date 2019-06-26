@@ -4,6 +4,7 @@ import 'package:flutter_dome/buttom/date_time_demo.dart';
 import 'package:flutter_dome/buttom/popup_menu_button_demo.dart';
 import 'package:flutter_dome/buttom/switch_demo.dart';
 import 'package:flutter_dome/chip/chip_demo.dart';
+import 'package:flutter_dome/datatable/datatable_demo.dart';
 import 'package:flutter_dome/dialog/expansion_panel_demo.dart';
 import 'package:flutter_dome/dialog/simple_dialog_demo.dart';
 
@@ -56,6 +57,10 @@ class _ButtonDemoState extends State<ButtonDemo> {
           ListItem(
             title: "ChipDemo",
             page: ChipDemo(),
+          ),
+          ListItem(
+            title: "DataTableDemo",
+            page: DataTableDemo(),
           ),
         ],
       ),
