@@ -3,6 +3,8 @@ import 'package:flutter_dome/buttom/checkbox_demo.dart';
 import 'package:flutter_dome/buttom/date_time_demo.dart';
 import 'package:flutter_dome/buttom/popup_menu_button_demo.dart';
 import 'package:flutter_dome/buttom/switch_demo.dart';
+import 'package:flutter_dome/card/card_demo.dart';
+import 'package:flutter_dome/card/stepper_demo.dart';
 import 'package:flutter_dome/chip/chip_demo.dart';
 import 'package:flutter_dome/datatable/datatable_demo.dart';
 import 'package:flutter_dome/dialog/expansion_panel_demo.dart';
@@ -61,6 +63,14 @@ class _ButtonDemoState extends State<ButtonDemo> {
           ListItem(
             title: "DataTableDemo",
             page: DataTableDemo(),
+          ),
+          ListItem(
+            title: "CardDemo",
+            page: CardDemo(),
+          ),
+          ListItem(
+            title: "StepperDemo",
+            page: StepperDemo(),
           ),
         ],
       ),
