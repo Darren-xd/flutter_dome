@@ -9,6 +9,7 @@ import 'package:flutter_dome/chip/chip_demo.dart';
 import 'package:flutter_dome/datatable/datatable_demo.dart';
 import 'package:flutter_dome/dialog/expansion_panel_demo.dart';
 import 'package:flutter_dome/dialog/simple_dialog_demo.dart';
+import 'package:flutter_dome/stream/stream_demo.dart';
 
 class ButtonDemo extends StatefulWidget {
   @override
@@ -71,6 +72,10 @@ class _ButtonDemoState extends State<ButtonDemo> {
           ListItem(
             title: "StepperDemo",
             page: StepperDemo(),
+          ),
+          ListItem(
+            title: "StreamDemo",
+            page: StreamDemo(),
           ),
         ],
       ),
