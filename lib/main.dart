@@ -6,6 +6,7 @@ import 'package:flutter_dome/prefile/prefile_page.dart';
 import 'package:flutter_dome/settings/settings_page.dart';
 import 'package:flutter_dome/login/login_page.dart';
 import 'package:flutter_dome/buttom/button_demo.dart';
+import 'package:flutter_dome/state/state_manager_demo.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,12 +22,13 @@ class MyApp extends StatelessWidget {
       // home: RootView(),
       // home: NavigatorDemo(),
 
-      initialRoute: '/button',
+      initialRoute: '/state',
       routes: {
         '/': (context) => RootView(),
         '/about': (context) => Page(title: "ABOUT"),
         '/login': (context) => LoginPage(),
         '/button': (context) => ButtonDemo(),
+        "/state": (context) => StateManagerDemo(),
       },
     );
 
