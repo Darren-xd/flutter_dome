@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dome/demo/navigator_demo.dart';
 import 'package:flutter_dome/home/home_page.dart';
 import 'package:flutter_dome/prefile/prefile_page.dart';
+import 'package:flutter_dome/rx_dart/rxdart_demo.dart';
 import 'package:flutter_dome/settings/settings_page.dart';
 import 'package:flutter_dome/login/login_page.dart';
 import 'package:flutter_dome/buttom/button_demo.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       // home: RootView(),
       // home: NavigatorDemo(),
 
-      initialRoute: '/stream',
+      initialRoute: '/rxdart',
       routes: {
         '/': (context) => RootView(),
         '/about': (context) => Page(title: "ABOUT"),
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         '/button': (context) => ButtonDemo(),
         "/state": (context) => StateManagerDemo(),
         '/stream': (context) => StreamDemo(),
+        '/rxdart': (context) => RxDartDemo(),
       },
     );
 

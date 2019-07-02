@@ -174,7 +174,15 @@ class ButtonOneDemo extends StatelessWidget {
       children: <Widget>[
         Container(
           width: 170,
-          child: OutlineButton(child: Text("BUTTON")),
+          child: OutlineButton(
+            child: Text("BUTTON"),
+            onPressed: () {},
+          ),
+        ),
+        OutlineButton.icon(
+          label: Text(""),
+          icon: Icon(Icons.ac_unit),
+          onPressed: () {},
         )
       ],
     );
@@ -182,12 +190,18 @@ class ButtonOneDemo extends StatelessWidget {
     final Widget ExpandButtonDemo = Row(
       children: <Widget>[
         Expanded(
-          child: OutlineButton(child: Text("BUTTON")),
+          child: OutlineButton(
+            child: Text("BUTTON"),
+            onPressed: () {},
+          ),
           flex: 1,
         ),
         SizedBox(width: 10),
         Expanded(
-          child: OutlineButton(child: Text("BUTTON")),
+          child: OutlineButton(
+            child: Text("BUTTON"),
+            onPressed: () {},
+          ),
           flex: 2,
         ),
       ],
