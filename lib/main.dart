@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dome/animaction/animaction_demo.dart';
 import 'package:flutter_dome/bloc/bloc_demo.dart';
 import 'package:flutter_dome/demo/navigator_demo.dart';
 import 'package:flutter_dome/home/home_page.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       // home: RootView(),
       // home: NavigatorDemo(),
 
-      initialRoute: '/http',
+      initialRoute: '/animaction',
       routes: {
         '/': (context) => RootView(),
         '/about': (context) => Page(title: "ABOUT"),
@@ -37,6 +38,7 @@ class MyApp extends StatelessWidget {
         '/rxdart': (context) => RxDartDemo(),
         '/bloc': (context) => BlocDemo(),
         '/http': (context) => HttpDemo(),
+        '/animaction': (context) => AnimactionDemo(),
       },
     );
 
